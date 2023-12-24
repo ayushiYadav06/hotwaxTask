@@ -1,28 +1,30 @@
 const user = require('../models/createOrder');
-const { findById } = require('../models/person');
 
-exports.getOrder = async(req,res) =>{
+
+exports.getOrderItem = async(req,res) =>{
     try {
 
         const id = req.params.id;
         console.log(id)
         const {
-            orderName,
-            currencyUomId,
-            salesChannelEnumId,
-            statusId,
-            productStoreId,
-            placedDate,
-            approvedDate,
-            grandTotal 
+            partName,
+            facilityId,
+            shipmentMethodEnumId,
+            customerPartyId,
+            itemDescription,
+            quantity,
+            unitAmount,
+            // orderId , 
+            // productId,
+            // item_details
         } = req.body;
 
-        const getorder= await user.findById({_id:id})
+        const orderItem = await user.find({})
 
-        
+         
         res.status(200).json({
             success:true,
-            data:getorder,
+            data:orderItem,
             message:"Order Fetched by Id Successfully"
         })
         

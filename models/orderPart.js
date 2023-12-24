@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const orderPartSchema = new mongoose.Schema ({
          orderId:{
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'CreateOrder'
+            // type:mongoose.Schema.Types.ObjectId,
+            // ref:'CreateOrder'
          },
          orderPartSeqId:{
             type:String
